@@ -1,0 +1,14 @@
+services:
+  pb:
+    build:
+      context: .
+      args:
+        - VERSION=0.2.1
+        - PORT=${PORT:-8090}
+    volumes:
+      - pb_data:/pb_data
+    ports:
+      - "${PORT:-8090}:${PORT:-8090}"
+
+volumes:
+  pb_data:
