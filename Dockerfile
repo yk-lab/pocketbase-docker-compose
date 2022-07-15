@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ARG VERSION=0.2.1
+ARG VERSION=0.2.7
 RUN set -e \
     && wget --no-verbose --show-progress --progress=dot:mega -O pocketbase.zip https://github.com/pocketbase/pocketbase/releases/download/v${VERSION}/pocketbase_${VERSION}_linux_arm64.zip \
     && unzip pocketbase.zip \
