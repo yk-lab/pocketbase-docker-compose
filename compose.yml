@@ -3,7 +3,7 @@ services:
     build:
       context: .
       args:
-        - VERSION=0.2.7
+        - VERSION=0.8.0
         - PORT=${PORT:-8090}
     volumes:
       - pb_data:/pb_data
