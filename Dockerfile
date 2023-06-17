@@ -28,11 +28,12 @@ RUN set -e \
 FROM gcr.io/distroless/static:nonroot
 
 WORKDIR /pocketbase
-COPY --from=builder /pocketbase /pocketbase
+COPY --from=builder --chown=nonroot:nonroot /pocketbase /pocketbase
 
 USER nonroot:nonroot
 
 ARG PORT=8090
 ENV PORT ${PORT}
 EXPOSE ${PORT}
-CMD [ "sh", "-c", "./pocketbase", "serve", "--http", "0.0.0.0:${PORT}" ]
+ENTRYPOINT [ "./pocketbase" ]
+CMD [ "--help" ]

@@ -12,6 +12,7 @@ $ docker compose up -d
 services:
   pb:
     image: ghcr.io/yk-lab/pocketbase:latest
+    command: [ "serve", "--http", "0.0.0.0:8090" ]
     volumes:
       - pb_data:/pb_data
     ports:
@@ -31,6 +32,7 @@ services:
       args:
         - VERSION=0.16.5
         - PORT=${PORT:-8090}
+    command: [ "serve", "--http", "0.0.0.0:${PORT:-8090}" ]
     volumes:
       - pb_data:/pb_data
     ports:
@@ -46,6 +48,7 @@ OR
 services:
   pb:
     image: ghcr.io/yk-lab/pocketbase:0.16.5
+    command: [ "serve", "--http", "0.0.0.0:8090" ]
     volumes:
       - pb_data:/pb_data
     ports:
