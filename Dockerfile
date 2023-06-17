@@ -35,4 +35,4 @@ USER nonroot:nonroot
 ARG PORT=8090
 ENV PORT ${PORT}
 EXPOSE ${PORT}
-CMD [ "./pocketbase", "serve", "--http", "0.0.0.0:${PORT}" ]
+CMD [ "sh", "-c", "./pocketbase", "serve", "--http", "0.0.0.0:${PORT}" ]
