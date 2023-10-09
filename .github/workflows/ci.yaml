@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Run hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
@@ -31,7 +31,7 @@ jobs:
       packages: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - id: pocketbase
         uses: pozetroninc/github-action-get-latest-release@master
