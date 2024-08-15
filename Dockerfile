@@ -33,7 +33,7 @@ COPY --from=builder --chown=nonroot:nonroot /pocketbase /pocketbase
 USER nonroot:nonroot
 
 ARG PORT=8090
-ENV PORT ${PORT}
+ENV PORT=${PORT}
 EXPOSE ${PORT}
 ENTRYPOINT [ "./pocketbase" ]
 CMD [ "--help" ]
