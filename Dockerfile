@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM ubuntu:24.04 AS builder
+FROM --platform=$BUILDPLATFORM ubuntu:26.04 AS builder
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
